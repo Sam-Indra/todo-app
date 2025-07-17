@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Simple To-Do App</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>To-Do List</h1>
-    <input id="taskInput" type="text" placeholder="Enter a task">
-    <button onclick="addTask()">Add </button>
+    <h1>📝 My To-Do List</h1>
+
+    <div class="input-section">
+      <input id="taskInput" type="text" placeholder="Enter your task..." />
+      <input id="deadlineInput" type="date" />
+      <button onclick="addTask()">Add</button>
+      <button onclick="clearTasks()" class="clear-btn">Clear All</button>
+    </div>
+
+    <div class="filter-section">
+      <label for="filterSelect">Filter:</label>
+      <select id="filterSelect" onchange="applyFilter()">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="incomplete">Incomplete</option>
+      </select>
+    </div>
+
     <ul id="taskList"></ul>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
